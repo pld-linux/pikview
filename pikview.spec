@@ -31,8 +31,6 @@ wype³niania obrazków, przegl±dania pe³noekranowego, drukowania,
 pokazywania obrazków jako slajdów.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 
 %build
