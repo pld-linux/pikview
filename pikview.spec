@@ -1,5 +1,5 @@
 Summary:	PikView is an image viewer
-Summary(pl):	PikView przegl±dark± plików graficznych
+Summary(pl):	PikView jest przegl±dark± plików graficznych
 Name:		pikview
 Version:	0.9.1
 Release:	1
@@ -24,6 +24,14 @@ read the following image types: png, jpeg, tiff, gif, netpbm (and via
 the ImageMagick library - eps, pict, dcx, pcx, mif, bmp, viff, pnm)
 Also supported are the following features: preloading, zooming,
 thumbnails, rapid image filing, fullscreen, printing, slideshow.
+
+%description -l pl
+PikView jest przegl±dark± plików graficznych u¿ywaj±c± bibliotek KDE.
+Mo¿e czytaæ pliki: png, jpeg, tiff, gif, netpbm (oraz poprzez
+bibliotekê ImageMagick: eps, pict, dcx, pcx, mif, bmp, viff, pnm).
+Poza tym ma mo¿liwo¶æ: pre³adowania, powiêkszania, thumbnaili,
+wype³niania obrazków, przegl±dania pe³noekranowego, drukowania,
+pokazywania obrazków jako slajdów.
 
 %prep
 rm -rf $RPM_BUILD_ROOT
