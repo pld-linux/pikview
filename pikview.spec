@@ -4,6 +4,7 @@ Version:	0.8.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
+Group(pl):	X11/Aplikacje/Multimedia
 Source0:	http://download.sourceforge.net/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -11,11 +12,11 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-PikView is an image viewer which uses the KDE libraries.  PikView can read the
-following image types: png, jpeg, tiff, gif, netpbm (and via the ImageMagick
-library - eps, pict, dcx, pcx, mif, bmp, viff, pnm) Also supported are the
-following features: preloading, zooming, thumbnails, rapid image filing,
-fullscreen, printing, slideshow.
+PikView is an image viewer which uses the KDE libraries. PikView can
+read the following image types: png, jpeg, tiff, gif, netpbm (and via
+the ImageMagick library - eps, pict, dcx, pcx, mif, bmp, viff, pnm)
+Also supported are the following features: preloading, zooming,
+thumbnails, rapid image filing, fullscreen, printing, slideshow.
 
 %prep
 rm -rf $RPM_BUILD_ROOT
@@ -49,3 +50,4 @@ find . -type l | sed 's,^\.,\%attr(-\,root\,root) ,' >> \
 rm -rf $RPM_BUILD_ROOT
 
 %files -f ../file.list.%{name}
+%defattr(644,root,root,755)
