@@ -5,21 +5,6 @@ Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(cs):	X11/Aplikace/Multimédia
-Group(da):	X11/Programmer/Multimedie
-Group(de):	X11/Applikationen/Multimedien
-Group(es):	X11/Aplicaciones/Multimedia
-Group(fr):	X11/Applications/Multimédia
-Group(is):	X11/Forrit/Margmiğlun
-Group(it):	X11/Applicazioni/Multimedia
-Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Ş¥ë¥Á¥á¥Ç¥£¥¢
-Group(no):	X11/Programmer/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
-Group(pt):	X11/Aplicações/Multimédia
-Group(ru):	X11/ğÒÉÌÏÖÅÎÉÑ/íÕÌØÔÉÍÅÄÉÁ
-Group(sl):	X11/Programi/Veèpredstavnost
-Group(sv):	X11/Tillämpningar/Multimedia
-Group(uk):	X11/ğÒÉËÌÁÄÎ¦ ğÒÏÇÒÁÍÉ/íÕÌØÔÉÍÅÄ¦Á
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
 BuildRequires:	ImageMagick-devel
