@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/pikview/%{name}-%{version}.tar.gz
+# Source0-md5:	130fb09005cf6d04ded879570c8ba126
 URL:		http://pikview.sourceforge.net/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	gdbm-devel
