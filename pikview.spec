@@ -5,7 +5,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
-Source0:	http://download.sourceforge.net/pikview/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
