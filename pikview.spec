@@ -11,7 +11,7 @@ URL:		http://pikview.sourceforge.net/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	gdbm-devel
 BuildRequires:	kdelibs-devel >= 2.0
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
 
