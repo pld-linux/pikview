@@ -5,18 +5,30 @@ Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
+Group(cs):	X11/Aplikace/Multimédia
+Group(da):	X11/Programmer/Multimedie
+Group(de):	X11/Applikationen/Multimedien
+Group(es):	X11/Aplicaciones/Multimedia
+Group(fr):	X11/Applications/Multimédia
+Group(is):	X11/Forrit/Margmiðlun
+Group(it):	X11/Applicazioni/Multimedia
+Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Þ¥ë¥Á¥á¥Ç¥£¥¢
+Group(no):	X11/Programmer/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
+Group(pt):	X11/Aplicações/Multimédia
+Group(ru):	X11/ðÒÉÌÏÖÅÎÉÑ/íÕÌØÔÉÍÅÄÉÁ
+Group(sl):	X11/Programi/Veèpredstavnost
+Group(sv):	X11/Tillämpningar/Multimedia
+Group(uk):	X11/ðÒÉËÌÁÄÎ¦ ðÒÏÇÒÁÍÉ/íÕÌØÔÉÍÅÄ¦Á
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
 BuildRequires:	ImageMagick-devel
-BuildRequires:	jbigkit-devel
-BuildRequires:	libwmf-devel
-BuildRequires:	libxml2-devel
-BuildRequires:	XFree86-DPS-devel
+BuildRequires:	gdbm-devel
+BuildRequires:	kdelibs-devel >= 2.0
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 PikView is an image viewer which uses the KDE libraries. PikView can
@@ -39,6 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 %setup -q
 
 %build
+kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_icondir="%{_pixmapsdir}"; export kde_icondir
 CXXFLAGS="%{rpmcflags} %{!?debug:-DNO_DEBUG}"
 %configure2_13
 
@@ -46,21 +60,22 @@ CXXFLAGS="%{rpmcflags} %{!?debug:-DNO_DEBUG}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-cd $RPM_BUILD_ROOT
-find . -type d | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' > \
-        $RPM_BUILD_DIR/file.list.%{name}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-find . -type f | sed -e 's,^\.,\%attr(-\,root\,root) ,' \
-        -e '/\/config\//s|^|%config|' >> \
-        $RPM_BUILD_DIR/file.list.%{name}
-
-find . -type l | sed 's,^\.,\%attr(-\,root\,root) ,' >> \
-        $RPM_BUILD_DIR/file.list.%{name}
+%find_lang %{name} --with-kde --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f ../file.list.%{name}
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%files -f %{name}.lang
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libpikview.so.*.*
+%{_datadir}/apps/pikview
+%{_applnkdir}/Graphics/pikview.desktop
+%{_pixmapsdir}/*/*/apps/*
