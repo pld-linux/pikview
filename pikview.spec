@@ -4,6 +4,7 @@ Version:	0.8.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
+Group(de):	X11/Applikationen/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
@@ -24,10 +25,8 @@ rm -rf $RPM_BUILD_ROOT
 %setup -q
 
 %build
-CXXFLAGS="$RPM_OPT_FLAGS -DNO_DEBUG"
-LDFLAGS="-s"
-export CXXFLAGS LDFLAGS
-%configure \
+CXXFLAGS="%{rpmcflags} %{!?debug:-DNO_DEBUG}"
+%configure
 
 %{__make}
 
