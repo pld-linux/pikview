@@ -33,7 +33,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 cd $RPM_BUILD_ROOT
 find . -type d | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' > \
