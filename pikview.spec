@@ -1,6 +1,7 @@
 Summary:	PikView is an image viewer
+Summary(pl):	PikView przegl±dark± plików graficznych
 Name:		pikview
-Version:	0.8.2
+Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
@@ -8,6 +9,11 @@ Group(de):	X11/Applikationen/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/pikview/%{name}-%{version}.tar.gz
 URL:		http://pikview.sourceforge.net/
+BuildRequires:	ImageMagick-devel
+BuildRequires:	jbigkit-devel
+BuildRequires:	libwmf-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	XFree86-DPS-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -26,7 +32,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %build
 CXXFLAGS="%{rpmcflags} %{!?debug:-DNO_DEBUG}"
-%configure
+%configure2_13
 
 %{__make}
 
