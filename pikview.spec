@@ -1,5 +1,5 @@
 Summary:	PikView is an image viewer
-Summary(pl.UTF-8):   PikView jest przeglądarką plików graficznych
+Summary(pl.UTF-8):	PikView jest przeglądarką plików graficznych
 Name:		pikview
 Version:	0.9.1
 Release:	1
